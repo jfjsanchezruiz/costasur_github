@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Quienes Somos {% endblock %}
+{% block contenido %}
+	<section>
+		<div class="banner">			
+			<div class="topimg" id="topimg-about" style="background-image:url('{{STATIC_URL}}images/ban_somos.jpg');"></div>			
+		</div>			
+				
+		<div class="container-fluid" id="somosp">
+			<article class="col-md-12" id="introducion">				
+				<div class="body container">
+					<p>Una empresa inmobiliaria y de servicios encargada de la comercialización, venta y administración de las propiedades y los servicios básicos en viviendas y negocios del exclusivo Complejo Turístico Casa de Campo, ubicado en La Romana, parte Este de la República Dominicana.</p>
+					<p>Casa de Campo es conocido como el principal y más completo Complejo Turístico de la Región del Caribe, con una privilegiada ubicación geográfica en el centro de América y cerca de las principales ciudades de la Costa Este de Estados Unidos y Canadá (1 hr. 50 min. de Miami y 3 hr. de New York) y de la parte Norte de América del Sur (Caracas, Bogotá, entre otros).</p>
+					<p>Estamos localizados a 10 minutos del Aeropuerto Internacional de La Romana,  a 50 minutos del Aeropuerto Internacional de Las Américas, en Santo Domingo, Capital de la República Dominicana, y 50 minutos del Aeropuerto Internacional de Punta Cana, todo esto a través de modernas carreteras.</p>
+				</div>
+			</article>
+		</div>
+
+		
+
+	</section>	
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");
+	});
+</script>
+{% endblock %}

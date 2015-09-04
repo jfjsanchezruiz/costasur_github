@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Contacto {% endblock %}
+{% block contenido %}
+	<section>
+		<div class="banner" >
+			<div class="topimg" style="background-image:url('{{STATIC_URL}}images/contact.jpg');"></div>
+			<!-- <img src="{{STATIC_URL}}images/contact.jpg"> -->
+			<div class="about_title">Contacto</div>
+		</div>			
+				
+
+		<div class="container-fluid" id="somosp">
+			<article class="col-md-12" id="introducion">				
+				<div class="body">
+					<p>Su requerimiento es importante para nosotros, favor contactarnos por alguna de las siguientes vías.</p>					
+				</div>
+			</article>
+
+		</div>
+		<div class="vias">	
+			<div class="list_vias col-md-6">
+				<ul>
+					<li><img src="{{STATIC_URL}}images/tel.png"> Servicio al Cliente: 809.523.8528 | Operador: 809.951.1500</li>
+					<li><img src="{{STATIC_URL}}images/tuit.png"> Siguenos en Twitter como: @costasur</li>
+					<li><img src="{{STATIC_URL}}images/face.png"> Siguenos en Facebook</li>
+					<li><img src="{{STATIC_URL}}images/email.png"> Envianos un Correo a: servicioalcliente@costasur.com.do</li>
+				</ul>
+			</div>
+			<div class="cfcontainer col-md-6">	
+				<div id="title">Escribenos</div>
+				<form role="form" method="POST">
+				{% csrf_token %}
+					<div class="contact_form">
+						<div class="form-group col-sm-6">
+							<label for="nombre">Nombre:</label>
+							<input type="text" class="form-control input-lg" id="nombre">
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="email">Email:</label>
+							<input type="email" class="form-control input-lg" id="email">
+						</div>	
+
+						<div class="form-group col-sm-12">
+							<label for="requeri">Requerimiento:</label>
+							<textarea class="form-control" rows="7" id="requeri"></textarea>			
+						</div>						
+					</div>
+					<button type="submit" class="btn">Enviar</button>
+				</form>				
+			</div>
+		</div>	
+
+		<div class="mapa">
+			<div class="title">MAPA</div>
+			<div class="body">			
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3785.504371285437!2d-68.93475799999986!3d18.415394967594764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sdo!4v1416844441828" width="100%" height="400" frameborder="0" style="border:0"></iframe>
+			</div>
+
+		</div>
+	</section>	
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript"> 
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");		
+	});
+</script>
+{% endblock %}

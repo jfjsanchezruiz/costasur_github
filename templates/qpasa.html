@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Quienes Somos {% endblock %}
+{% block contenido %}
+<section>
+	<div class="banner">			
+		<div class="about_title small">Q'Pasa En Casa</div>
+	</div>			
+
+	<div class="gcontainer">
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<!-- [[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]] -->
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="heading1">
+			  <h4 class="panel-title">
+			    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+			    1 de Noviembre del 2014
+			    </a>
+			  </h4>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+				<div class="panel-body container">
+				    <div class="qpasalist">	
+				    	<div class="row">
+				    		<a href="" data-toggle="modal" data-target=".bs-example-modal-lg">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qcdc.jpg">
+					    		</div>
+				    		</a>	
+				    		<a href=""  data-toggle="modal" data-target=".bs-example-modal-lg">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qcha.jpg">
+					    		</div>
+				    		</a>	
+				    		<a href=""  data-toggle="modal" data-target=".bs-example-modal-lg">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qmar.jpg">
+					    		</div>
+				    		</a>					    						    				    		
+				    	</div>
+				    </div>				    			    						
+			  	</div>
+			</div>
+		</div>
+		<!-- [[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]] -->
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="heading2">
+			  <h4 class="panel-title">
+			    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+			      30 de Octubre del 2014
+			    </a>
+			  </h4>
+			</div>
+			<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+				<div class="panel-body container">
+				    <div class="qpasalist">	
+				    	<div class="row">
+				    		<a href="">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qcdc.jpg">
+					    		</div>
+				    		</a>	
+				    		<a href="">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qcha.jpg">
+					    		</div>
+				    		</a>	
+				    		<a href="">				    			
+				    			<div class="thumbnail col-md-4">
+					      			<img src="{{STATIC_URL}}images/qpasa/qmar.jpg">
+					    		</div>
+				    		</a>					    						    				    		
+				    	</div>
+				    </div>				    			    						
+			  	</div>
+			</div>
+		</div>
+		<!-- [[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]] -->																			  
+		</div>		
+	</div>
+</section>	
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<iframe id="issu" src="//e.issuu.com/embed.html#14471566/10284867" frameborder="0" allowfullscreen></iframe>			
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");
+		{% for gallery in gallerys %}
+		$("#glinks_{{gallery.nombre}} a").tosrus({
+		   caption    : {
+		      add        : true
+		   },
+		   pagination : {
+		      add        : true,
+		   },
+		   buttons    : "inline"
+		});	
+		{% endfor %}
+		$("#links a").tosrus();
+	});
+</script>
+{% endblock %}

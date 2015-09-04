@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Mantenimientos {% endblock %}
+{% block contenido %}
+	<section>
+		<div class="banner">			
+			<div class="topimg" id="topimg-about" style="background-image:url('{{STATIC_URL}}images/ban_mante.jpg');">
+				<!-- <div class="bantext">Servicios Premium Para Nuestros Clientes</div> -->
+			</div>
+		</div>							
+
+		<div class="container-fluid" id="somosp">
+			<article class="col-md-12" id="introducion">				
+				<div class="body">
+					<p>Nos caracterizamos por ofrecer diversos servicios, con el más alto grado de profesionalismo, garantía y calidad a la altura de las exigencias del mercado.</p>
+				</div>
+			</article>
+			
+			<article class="container">
+    			<div id="mant-owl-demo-1" class="owl-carousel">			  		
+			  		<!-- ITEMS -->
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_elect.gif">
+			  		</div>
+
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_repar.gif">
+			  		</div>
+
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_cable.gif">
+			  		</div>
+
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_pintura.gif">
+			  		</div>
+
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_herra.gif">
+			  		</div>
+
+					<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_agua.gif">
+			  		</div>
+
+			  		<div class="item">
+				  		<img src="{{STATIC_URL}}images/icons/mant_plagas.gif">
+			  		</div>			  		
+			  		<!-- END ITEMS -->			  		
+				</div>    				
+			</article>
+
+			<article class="container">
+    			<div id="mant-owl-demo-2" class="owl-carousel">			  		
+			  		<!-- ITEMS -->
+			  		<div class="item col-md-12">
+			  			<a href="#" data-toggle="modal" data-target="#modMA">
+					  		<div class="thumbnail">
+						    	<img src="{{STATIC_URL}}images/mante.jpg" alt="...">
+						    	<div class="titlethumb">Mantenimientos</div>
+						    	<div class="caption">					        	
+									<ul class="list-group">
+										<li class="list-group-item">Piscinas</li>
+										<li class="list-group-item">Albañilería</li>
+										<li class="list-group-item">Carpintería</li>
+										<li class="list-group-item">Fumigación Interior</li>
+										<li class="list-group-item">Mantenimiento y suministro de calentadores de agua</li>
+										<li class="list-group-item">Reparación de Estufas</li>
+										<li class="list-group-item">Pintura en general</li>
+										<li class="list-group-item">Suministro de gas propano</li>
+										<li class="list-group-item">Plomería en general</li>
+										<li class="list-group-item">Mantenimiento de pisos</li>					
+									</ul>			
+						      	</div>
+						    </div>
+			  			</a>
+			  		</div>
+
+			  		<div class="item col-md-12">
+			  			<a href="#" data-toggle="modal" data-target="#modEL">
+					  		<div class="thumbnail">
+						    	<img src="{{STATIC_URL}}images/elect.jpg" alt="...">
+						    	<div class="titlethumb">Eléctricos</div>
+						    	<div class="caption">					        	
+						        	<ul class="list-group">
+										<li class="list-group-item">Revisión de sistema de medición</li>
+										<li class="list-group-item">Corrección de sistema de aterrizaje</li>
+										<li class="list-group-item">Instalación, reparación y mantenimiento de neveras y aires acondicionados</li>
+										<li class="list-group-item">Cambio de Breakers</li>
+										<li class="list-group-item">Instalación y reparación de equipos eléctricos</li>
+									</ul>				       
+						      	</div>
+						    </div>
+			  			</a>
+			  		</div>
+
+			  		<div class="item col-md-12">
+			  			<a href="#" data-toggle="modal" data-target="#modSC">
+					  		<div class="thumbnail">
+						    	<img src="{{STATIC_URL}}images/telecom.jpg" alt="...">
+						    	<div class="titlethumb">Telecomunicaciones</div>
+						    	<div class="caption">					        	
+						        	<ul class="list-group">
+										<li class="list-group-item">Internet</li>
+										<li class="list-group-item">Teléfono</li>
+										<li class="list-group-item">Cable</li>
+										<li class="list-group-item">Averías en General</li>				
+									</ul>				       
+						      	</div>
+						    </div>
+			  			</a>
+			  		</div>
+
+			  		<div class="item col-md-12">
+			  			<a href="#" data-toggle="modal" data-target="#modLC">
+					  		<div class="thumbnail">
+						    	<img src="{{STATIC_URL}}images/legal.jpg" alt="...">
+						    	<div class="titlethumb">Legal Catastral</div>
+						    	<div class="caption">					        	
+						        	<ul class="list-group">
+										<li class="list-group-item">Deslindes</li>
+										<li class="list-group-item">Sub-Divisiones</li>
+										<li class="list-group-item">Refundiciones</li>
+										<li class="list-group-item">Asesoría legal sobre terrenos</li>				
+									</ul>					        	
+						      	</div>
+						    </div>
+				  		</a>  		
+				  	</div>		
+			  		<!-- END ITEMS -->			  		
+				</div>    				
+    		</article>
+<!-- 			<div class="col-md-4 mante_img">
+				<img src="{{STATIC_URL}}images/mante.jpg" class="img-thumbnail">
+			</div>	
+
+			<div class="list_mante col-md-8 col-xs-12">		
+
+				<div class="container-fluid">
+					<ul class="list-group col-xs-12">
+						<li class="list-group-item list-group-item-info">Piscinas</li>
+						<li class="list-group-item list-group-item-info">Albañilería</li>
+						<li class="list-group-item list-group-item-info">Carpintería</li>
+						<li class="list-group-item list-group-item-info">Fumigación Interior</li>
+						<li class="list-group-item list-group-item-info">Mantenimiento y suministro de calentadores de agua</li>
+						<li class="list-group-item list-group-item-info">Reparación de Estufas</li>
+						<li class="list-group-item list-group-item-info">Pintura en general</li>
+						<li class="list-group-item list-group-item-info">Suministro de gas propano</li>
+						<li class="list-group-item list-group-item-info">Plomería en general</li>
+						<li class="list-group-item list-group-item-info">Mantenimiento de pisos</li>					
+					</ul>
+
+					<span>Eléctricos</span>
+
+					<ul class="list-group col-xs-12">
+						<li class="list-group-item list-group-item-info">Revisión de sistema de medición</li>
+						<li class="list-group-item list-group-item-info">Corrección de sistema de aterrizaje</li>
+						<li class="list-group-item list-group-item-info">Instalación, reparación y mantenimiento de neveras y aires acondicionados</li>
+						<li class="list-group-item list-group-item-info">Cambio de Breakers</li>
+						<li class="list-group-item list-group-item-info">Instalación y reparación de equipos eléctricos</li>
+					</ul>					
+				</div>
+			</div> -->
+		</div>
+	</section>	
+
+	<div class="modal fade" id="modMA">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Mantenimientos</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p></p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="modEL">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Eléctricos</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Somos un departamento de electromecánica orientado a planificar, diseñar, calcular y dirigir todas las operaciones de construcción y mantenimiento de la infraestructura eléctrica. Además elaboramos los presupuestos operacionales y ofrecemos diversos servicios eléctricos al cliente ya sea de programación y coordinación de  todas las actividades de obras eléctricas.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade" id="modSC">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Telecomunicaciones</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Es el departamento encargado de brindar asistencia a los diferentes requerimientos de nuestros clientes (reclamaciones, reparaciones de averías eléctricas, plomería, ebanistería, teléfono, internet, cable, refrigeración, entre otras), facilitando la solución a las problemáticas que puedan presentarse de una manera ética, profesional y favorable; así como la venta de los servicios de internet, teléfono y cable, además de la información y guía efectiva de todos los servicios ofrecidos dentro del complejo Casa de Campo.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="modLC">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Legal Catastral</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Asesoría legal Inmobiliaria respecto a los distintos procesos ante la Dirección Nacional de Mensuras Catastrales, Tribunal de Tierras y Registro de Títulos. (Deslindes, Sub-Divisiones, Refundiciones, Traspasos, Actualizaciones Parcelarias).</p>
+
+	        <p>Actualización Inmuebles ante la Dirección General de Impuestos Internos.</p>
+			<p>Gestión de Certificaciones de Propiedad Inmobiliaria y de Estado Jurídico de Inmuebles.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");
+	});
+</script>
+{% endblock %}

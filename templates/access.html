@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Quienes Somos {% endblock %}
+{% block contenido %}
+<section>
+	<div class="banner">			
+		<div class="topimg" id="topimg-about" style="background-image:url('{{STATIC_URL}}images/ban_access.jpg');">
+		</div>
+		<div class="about_title small">Seguridad</div>
+	</div>			
+	
+
+	<div class="container-fluid seg_content">
+		<div class="row">
+			<div class="col-md-6 intro_text">
+				Las entradas al complejo  Casa de Campo, pertenecen y son operadas por Guardianes Costasur una compañia afiliada la cual se encarga de mantener las operaciones de vigilancia las 24 horas. Los accesos al complejo son otorgados a los dueños de propiedades y sus invitados, al igual que los empleados, contratistas y huéspedes del resort Casa de Campo.  
+			</div>
+			<div class="col-md-6 acc_forms">
+					<div class="gcontainer">
+						<div class="title_formularios">
+							Formularios para solicitud de pases
+						</div>
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<!-- [[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]] -->
+							{% for pase in datos %}
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="heading{{pase.id}}">
+								  <h4 class="panel-title">
+								    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{pase.id}}" aria-expanded="{{pase.default|lower}}" aria-controls="collapse{{pase.id}}">
+								      {{pase.langcode|getText:lang_code}}
+								    </a>
+								  </h4>
+								</div>
+								<div id="collapse{{pase.id}}" class="panel-collapse collapse {% if pase.default %} in {% endif %}" role="tabpanel" aria-labelledby="heading{{pase.id}}">
+								  <div class="panel-body">
+								    <div class="pdflist">
+								    	<div class="thumbnail">
+									      <img src="{{STATIC_URL}}images/pdf.png">
+									      <div class="caption">
+									        <p>
+									        	{% if pase.esurl %}
+									        	<a href="{{STATIC_URL}}{{pase.esurl}}" class="btn btn-default" role="button" target="_blank">Español</a> 
+									        	{% endif %}
+									        	{% if pase.enurl %}
+									        	<a href="{{STATIC_URL}}{{pase.enurl}}" target="_blank" class="btn btn-default" role="button">English</a>
+									        	{% endif %}
+									        </p>
+									      </div>
+									    </div>
+								    </div>	
+								  </div>
+								</div>
+							</div>
+							{% endfor %}	
+							<!-- [[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]] -->
+						</div>		
+					</div>
+				<!-- FIn -->
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+</section>	
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");
+		{% for gallery in gallerys %}
+		$("#glinks_{{gallery.nombre}} a").tosrus({
+		   caption    : {
+		      add        : true
+		   },
+		   pagination : {
+		      add        : true,
+		   },
+		   buttons    : "inline"
+		});	
+		{% endfor %}
+		$("#links a").tosrus();
+	});
+</script>
+{% endblock %}

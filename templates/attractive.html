@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block title %} - Quienes Somos {% endblock %}
+{% block contenido %}
+<section class="atractives">
+	<div class="banner">			
+		<!-- <div class="topimg" id="topimg-about" style="background-image:url('{{STATIC_URL}}images/ban_somos.jpg');"></div> -->
+		<div class="galle_title">Galería</div>
+	</div>			
+			
+	<div class="container gcontainer">
+		<div class="row">
+			<ul class="nav nav-tabs nav-justified">
+				{% for gallery in gallerys %}
+			 	<li role="presentation" class="{{gallery.class1}}"><a href="#{{gallery.nombre}}" class="glink" role="tab" id="{{gallery.nombre}}-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">{{gallery.nombre}}</a></li>
+			 	{% endfor %}
+			</ul>
+
+			<div id="gcontent" class="tab-content gcontent">
+				{% for gallery in gallerys %}
+				<div role="tabpanel" class="tab-pane fade {{gallery.class2}}" id="{{gallery.nombre}}" aria-labelledby="{{gallery.nombre}}-tab">
+					<div class="container" id="glinks_{{gallery.nombre}}">
+						{% for items in gallery.items %}
+						<div class="gmedia col-md-4">
+							<a href="{{STATIC_URL}}{{items.ruta}}full/{{items.nombre}}" title="{{items.title}}"><img src="{{STATIC_URL}}{{items.ruta}}thumb/{{items.nombre}}" class="img-thumbnail"/></a>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				{% endfor %}																	    
+		    </div>
+
+		</div>
+	</div>
+</section>	
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#headcont').removeClass("alto");
+		{% for gallery in gallerys %}
+		$("#glinks_{{gallery.nombre}} a").tosrus({
+		   caption    : {
+		      add        : true
+		   },
+		   pagination : {
+		      add        : true,
+		   },
+		   buttons    : "inline"
+		});	
+		{% endfor %}
+		$("#links a").tosrus();
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,308 @@
+{% load my_filters %}
+<!DOCTYPE html>
+<html lang="{{lang_code}}">
+<head>	
+	<title>Costasur Casa De Campo {% block title %}{% endblock %}</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+	<div class="fixtp alto" id="headcont">		
+	    <nav class="navbar" role="navigation">
+	    	<div class="container-fluid">
+	    		<a href="">
+		    		<div class="logo col-xs-9 col-md-2">
+		    			<figure>
+		    				<img src="{{STATIC_URL}}images/cs_logo.png">
+		    			</figure>
+		    		</div>    			
+	    		</a>
+				
+				<div class="desk_menu col-md-7 hidden-xs hidden-sm">
+					<ul class="mrul">
+			    		<li class="menitem mrli {{men1}}"><a href="/{{lang_code}}/home/">{{"inicio"|getText:lang_code}}</a></li>			    		
+			    		<li class="menitem mrli {{men2}}"><a href="/{{lang_code}}/about/">{{"somos"|getText:lang_code}}</a></li>		    		
+			    		<li class="menitem mrli {{men3}}"><a href="/{{lang_code}}/attractives/">{{"mapa"|getText:lang_code}}</a></li>			    		
+			    		<li class="menitem mrli {{men4}} dropdown">
+			    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{"productos"|getText:lang_code}} <span class="caret"></span></a>
+			    			<ul class="dropdown-menu" role="menu">
+								<li><a href="/{{lang_code}}/products/maintenance">{{"mant"|getText:lang_code}}</a></li>							
+								<li><a href="/{{lang_code}}/products/access">{{"access"|getText:lang_code}}</a></li>
+								<li><a href="http://casadecampore.com/" target="_blank">{{"bienes"|getText:lang_code}}</a></li>
+								<li><a href="/{{lang_code}}/products/lrcc">{{"country"|getText:lang_code}}</a></li>
+								<li><a href="http://casadecampo.com.do/" target="_blank">{{"hotel"|getText:lang_code}}</a></li>
+							</ul>
+			    		</li>			    				    		
+			    		<li class="menitem mrli {{men5}} dropdown">
+			    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{"noticias"|getText:lang_code}} <span class="caret"></span></a>
+			    			<ul class="dropdown-menu" role="menu">
+								<li><a href="/{{lang_code}}/news/cccn">{{"cdcnews"|getText:lang_code}}</a></li>
+								<li><a href="/{{lang_code}}/news/qpasa">{{"qpasa"|getText:lang_code}}</a></li>
+								<li><a href="/{{lang_code}}/news/cdcliving">{{"cdl"|getText:lang_code}}</a></li>				
+							</ul>
+			    		</li>
+			    		<li class="menitem mrli {{men6}}"><a href="/{{lang_code}}/contact/">{{"contact"|getText:lang_code}}</a></li>			
+			    	</ul>    		
+				</div>    	
+
+				 <div class="col-xs-3 menu_bars visible-xs visible-sm">
+		            <a href="#" id="menu-toggle">
+		                <i class="fa fa-bars fa-2x"></i>            
+		            </a>
+		        </div>    
+
+		        <div class="control_bar col-md-3 hidden-xs hidden-sm pull-right">
+		        	<ul class="cbul">
+		        		<li class="cbli dropdown">
+		        			{% if lang_code = "es" %}
+			        			<img src="{{STATIC_URL}}images/lang/es_act.png">
+			        			<a href="" class="dropdown-toggle" data-toggle="dropdown"> Español <span class="caret"></span></a>
+			        			<ul class="dropdown-menu" role="menu">
+									<li><a href="" class="lkn_change_languaje" langstatus="I" langcode="en"><img src="{{STATIC_URL}}images/lang/en_act.png"> English </a></li>							
+								</ul>
+							{% endif %}
+							{% if lang_code = "en" %}
+			        			<img src="{{STATIC_URL}}images/lang/en_act.png">
+			        			<a href="" class="dropdown-toggle" data-toggle="dropdown"> English <span class="caret"></span></a>
+			        			<ul class="dropdown-menu" role="menu">
+									<li><a href="" class="lkn_change_languaje" langstatus="I" langcode="es"><img src="{{STATIC_URL}}images/lang/es_act.png"> Español </a></li>							
+								</ul>
+							{% endif %}
+
+		        		</li>
+		        		<li class="cbli"><a href="http://192.168.32.4:82"><span class="glyphicon glyphicon-user"></span> Mi Costasur</a></li>
+		        	</ul>
+		        </div>			
+	    	</div>
+	    </nav>
+
+		<div class="movile_menu" id="movile_menu">
+			<div class="caption container">
+				<span class="col-xs-10">Menu</span>
+				<a href="#" id="menu-toggle2" class="col-xs-2">
+	                <i class="fa fa-close fa-1x"></i>            
+	            </a>
+			</div>
+			<div class="container mv-lang">	
+				{% if lang_code = "es" %}		
+					<div class="col-xs-2 lang_select"><a href="/es/" class="lkn_change_languaje" langstatus="A" langcode="es"><img src="{{STATIC_URL}}images/lang/es_act.png"> Español</a></div>
+					<div class="col-xs-2"><a href="/en/" class="lkn_change_languaje" langstatus="I" langcode="en"><img src="{{STATIC_URL}}images/lang/en_ina.png"> English</a></div>
+				{% endif %}
+				{% if lang_code = "en" %}		
+					<div class="col-xs-2"><a href="/es/" class="lkn_change_languaje" langstatus="I" langcode="es"><img src="{{STATIC_URL}}images/lang/es_ina.png"> Español</a></div>
+					<div class="col-xs-2 lang_select"><a href="/en/" class="lkn_change_languaje" langstatus="A" langcode="en"><img src="{{STATIC_URL}}images/lang/en_act.png"> English</a></div>				
+				{% endif %}
+			</div>
+			<ul class="mmul">
+				<li class="mmli"><a href="/{{lang_code}}/home/">{{"inicio"|getText:lang_code}}</a></li>
+				<li class="mmli"><a href="/{{lang_code}}/about/">{{"somos"|getText:lang_code}}</a></li>
+				<li class="mmli"><a href="/{{lang_code}}/attractives/">{{"mapa"|getText:lang_code}}</a></li>
+				<li class="mmli">
+					<a href="" id="sub-menu-toggle1"><span class="glyphicon glyphicon-expand"></span> {{"productos"|getText:lang_code}}</a>
+					<div id="men_products_items">
+						<ul>
+							<li><a href="/{{lang_code}}/products/maintenance">{{"mant"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/products/telecom">{{"tele"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/products/legal">{{"legal"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/products/access">{{"access"|getText:lang_code}}</a></li>
+							<li><a href="http://casadecampore.com/" target="_blank">{{"bienes"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/products/lrcc">{{"country"|getText:lang_code}}</a></li>
+							<li><a href="http://casadecampo.com.do/" target="_blank">{{"hotel"|getText:lang_code}}</a></li>
+						</ul>						
+					</div>
+				</li>
+				<li class="mmli">
+					<a href="#" id="sub-menu-toggle2"><span class="glyphicon glyphicon-expand"></span> {{"noticias"|getText:lang_code}}</a>
+					<div id="men_news_items">
+						<ul>
+							<li><a href="/{{lang_code}}/news/cccn">{{"cdcnews"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/news/qpasa">{{"qpasa"|getText:lang_code}}</a></li>
+							<li><a href="/{{lang_code}}/news/cdcliving">{{"cdl"|getText:lang_code}}</a></li>					
+						</ul>
+					</div>
+				</li>
+				<li class="mmli"><a href="/{{lang_code}}/contact">{{"contact"|getText:lang_code}}</a></li>
+			</ul>
+		</div>
+
+		{% block header %}
+
+		{% endblock %}
+	</div>
+
+{% block contenido %}
+
+{% endblock %}
+
+    <div class="container-fluid comp_logos">    	
+    	<div id="base-owl-demo" class="container owl-carousel">
+	  		<!-- ITEMS -->
+	  		<div class="item">
+		  		<a href="http://casadecampo.com.do" target="_blank"><img class="logos_pie" data-alt-src="{{STATIC_URL}}images/logos/cdc_act.gif" src="{{STATIC_URL}}images/logos/cdc_ina.gif"></a>
+	  		</div>
+	  		<div class="item">
+		  		<a href="http://casadecampo.com.do/spa" target="_blank"><img class="logos_pie" data-alt-src="{{STATIC_URL}}images/logos/cdcs_act.gif" src="{{STATIC_URL}}images/logos/cdcs_ina.gif"></a>
+	  		</div>
+	  		<div class="item">
+		  		<a href="http://www.marinacasadecampo.com.do/" target="_blank"><img class="logos_pie" data-alt-src="{{STATIC_URL}}images/logos/lrm_act.gif" src="{{STATIC_URL}}images/logos/lrm_ina.gif"></a>
+	  		</div>
+	  		<div class="item">
+		  		<a href="http://www.lecirque.com/" target="_blank"><img class="logos_pie" data-alt-src="{{STATIC_URL}}images/logos/tbc_act.gif" src="{{STATIC_URL}}images/logos/tbc_ina.gif"></a>
+	  		</div>
+	  		<div class="item">
+		  		<a href="http://altosdechavon.edu.do/" target="_blank"><img class="logos_pie" data-alt-src="{{STATIC_URL}}images/logos/cha_act.gif" src="{{STATIC_URL}}images/logos/cha_ina.gif"></a>
+	  		</div>	  
+	  		<!-- END ITEMS -->			  		    			
+		</div>    				
+    </div>
+
+    <form method="POST" id="lang_form" action="/">
+    	{% csrf_token %}
+    	<input type="hidden" name="lang" id="langcamp">
+    </form>
+
+    <footer>
+    	Copyright 2002 - 2014 Costasur.com.do All Rights Reserved.
+    </footer>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/torus/jquery.tosrus.all.css" />		
+	<link rel="stylesheet" href="{{STATIC_URL}}offline/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}offline/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/devoops.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/hover-min.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/simple-sidebar.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/owl-carousel/owl.carousel.css">    
+    <link rel="stylesheet" href="{{STATIC_URL}}css/owl-carousel/owl.theme.css">    
+	<link rel="stylesheet" href="{{STATIC_URL}}css/styles.css">	 	
+ 	<script src="{{STATIC_URL}}offline/js/jquery.min.js"></script>
+	<script src="{{STATIC_URL}}offline/js/bootstrap.min.js"></script>	
+	<script src="{{STATIC_URL}}js/torus/jquery.tosrus.min.all.js"></script>
+    <script src="{{STATIC_URL}}js/owl-carousel/owl.carousel.js"></script>
+ 	<script src="{{STATIC_URL}}js/owl-carousel/bootstrap-collapse.js"></script>
+    <script src="{{STATIC_URL}}js/owl-carousel/bootstrap-transition.js"></script>
+    <script src="{{STATIC_URL}}js/owl-carousel/bootstrap-tab.js"></script>
+    
+	<script src="{{STATIC_URL}}js/owl-carousel/application.js"></script>   
+	
+    <script>        		
+		$(document).ready(function() {		 	
+
+			var nav = $('.navbar');
+
+			var sourceSwap = function () {
+			    var $this = $(this);
+			    var newSource = $this.data('alt-src');
+			    $this.data('alt-src', $this.attr('src'));
+			    $this.attr('src', newSource);
+			}
+			
+			$(function () {
+			    $('img.logos_pie').hover(sourceSwap, sourceSwap);
+			});
+
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 0) {
+					nav.addClass("f-nav");
+				} else {
+					nav.removeClass("f-nav");
+				}
+			});
+
+			$("#base-owl-demo").owlCarousel({
+				items : 5,
+				lazyLoad : false,
+				autoPlay: 10000,
+				stopOnHover: false,
+				paginationNumbers: false,
+				itemsTablet: [600,4], 
+				itemsMobile : [400,1],
+				pagination: false,
+				responsive: true,				
+			});	
+
+			$("#home-owl-demo").owlCarousel({
+				items : 3,
+				lazyLoad : true,
+				autoPlay: 10000,
+				stopOnHover: true,
+				paginationNumbers: true,
+			});
+
+			$("#about-owl-demo").owlCarousel({
+				items : 3,
+				lazyLoad : true,
+				autoPlay: 10000,
+				stopOnHover: true,
+				paginationNumbers: true,
+			});
+
+			$("#mant-owl-demo-1").owlCarousel({
+				items : 7,
+				lazyLoad : false,
+				autoPlay: 3000,
+				stopOnHover: false,
+				paginationNumbers: false,
+				itemsTablet: [600,4], 
+				itemsMobile : [400,2],
+				pagination: false,
+			});			
+		 	
+			$("#mant-owl-demo-2").owlCarousel({
+				items : 4,
+				lazyLoad : true,
+				autoPlay: 10000,
+				stopOnHover: true,
+				paginationNumbers: true,
+			});
+
+			$( "#menu-toggle" ).click(function(e) {
+	            e.preventDefault();
+	            $( "#movile_menu" ).toggle("slow");
+	        });
+
+			$( "#menu-toggle2" ).click(function(e) {
+	            e.preventDefault();
+	            $( "#movile_menu" ).toggle("slow");
+	        });
+
+			$( "#sub-menu-toggle1" ).click(function(e) {
+	            e.preventDefault();
+	            $( "#men_products_items" ).toggle("slow");
+	            $( "#men_news_items" ).hide("slow");
+	        });
+
+			$( "#sub-menu-toggle2" ).click(function(e) {
+	            e.preventDefault();
+	            $( "#men_news_items" ).toggle("slow");
+	            $( "#men_products_items" ).hide("slow");
+	        });
+
+	        $('#myCarousel').carousel({
+			  	interval: 20000,
+			  	pause : "",
+			})
+
+			$( ".lkn_change_languaje" ).click(function(e) {
+				e.preventDefault();
+				var lstatus = $(this).attr("langstatus");
+				var lcode   = $(this).attr("langcode");
+				if (lstatus == "I") {
+					$( "#langcamp" ).val(lcode);
+
+					if (lcode == "es") {
+						$( "#lang_form" ).attr("action", "/es/{{urlubic}}")
+					} else {
+						$( "#lang_form" ).attr("action", "/en/{{urlubic}}")
+					}
+
+					$( "#lang_form" ).submit();
+				}	
+			});
+		});
+    </script>    
+
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+</html>
